@@ -1,6 +1,7 @@
 # What is Qrest?
 
-> ==**Qrest**== ~_noun_~ \[_/krest/_\]
+> ==**Qrest**== <sub>_noun_</sub> \[_/krest/_\]
+>
 > A privacy-by-design productivity platform that stores to-do's and notes in a secure way
 
 The goal of Qrest is to create a so-called Second Brain.
@@ -13,27 +14,37 @@ Qrest is an acronym that encompasses the following definitions;
 
 # Installation
 
+## Clone the project
+
+Set up a directory and clone the project `git clone https://github.com/nick-van-h/qrest.git <target-directory>`
+
+Make sure the _public_ folder is accessible via the browser.
+
 ## Add autoload directory to the PATH include
 
-Update php.ini, on linux:
-`/etc/php/8.1/apache2/php.ini`
-Add the root project folder to _include_path_
+Update php.ini and add the root project folder to the _include_path_
+On linux php.ini is located in _/etc/php/8.1/apache2/_
+
+Restart the Apache service for the changes to take effect, on linux:
+`sudo service apache2 restart`
 
 ## Generate composer autoload
 
-Generate the autoload.php file using following commands:
+Generate _autoload.php_ via composer using following commands:
 
 ```
 composer update
 composer dump-autoload
 ```
 
-## Restart Apache
-
-Restart the Apache service for the changes to take effect
-
-`sudo service apache2 restart`
-
 ## Set up the database
 
-<tbd>
+Create _config/db.ini_ as per the template _\_db.ini_ with the settings of your database setup.
+
+First launch will redirect to _[Qrest base URI]/admin_ and update the table definitions to the latest version.
+
+# Upgrading
+
+## Updating the database
+
+First launch after updating will redirect to _[Qrest base URI]/admin_, update the table definitions to the latest version.
