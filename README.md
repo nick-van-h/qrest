@@ -1,6 +1,8 @@
 # What is Qrest?
 
-> ==**Qrest**== <sub>_noun_</sub> \[_/krest/_\]
+> ### **Qrest**
+>
+> <sub>_noun_</sub> \[_/krest/_\]
 >
 > A privacy-by-design productivity platform that stores to-do's and notes in a secure way
 
