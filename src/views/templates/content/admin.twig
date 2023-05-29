@@ -1,0 +1,74 @@
+<div class="row">
+	<div class="col-md-8 offset-md-2">
+		<h1 class="mt-20 pt-20 mb-20 pb-20">
+			{% if not dbConnectionOk or not dbVersionOk %}
+				Installation incomplete</h1>
+			<p>One or more components are not up to date.</p>
+		{% else %}
+			Installation complete</h1>
+		<p>Systems are running fine, you can grab a cup of coffee now.</p>
+	{% endif %}
+
+	<table class="table table-bordered">
+		<tr>
+			<th>Component</th>
+			<th>Details</th>
+			<th>Status</th>
+		</tr>
+		{# Database connection #}
+		{% if dbConnectionOk %}
+			<tr class="">
+				<td>Database connection</td>
+				<td>Connection can be established</td>
+				<td>OK</td>
+			</tr>
+		{% else %}
+			<tr class="table-danger">
+				<td>Database connection</td>
+				<td>{{ dbConnectionMessage }}</td>
+				<td>NOK</td>
+			</tr>
+		{% endif %}
+
+		{# Database version #}
+		{% if dbVersionOk %}
+			<tr class="">
+				<td>Database version</td>
+				<td>Version up to date</td>
+				<td>OK</td>
+			</tr>
+		{% else %}
+			<tr class="table-danger">
+				<td>Database version</td>
+				<td>{{ dbVersionMessage }}</td>
+				<td>NOK</td>
+			</tr>
+		{% endif %}
+	</table>
+
+	{% if dbConnectionOk and not dbVersionOk %}
+		<div class="h-50"></div>
+		<hr>
+		<h3>Update database</h3>
+		<p>Run scripts to update the database definition to the latest version. Leave blank to use default app SQL user.</p>
+		<div class="w-400">
+			<form id="admin-updateDatabase">
+				<div class="form-group">
+					<label for="username">Username</label>
+					<input id="username" type="text" name="username" class="form-control" placeholder="Username"/>
+				</div>
+				<div class="form-group">
+					<label for="password">Password</label>
+					<input id="password" type="password" name="password" class="form-control" placeholder="Password"/>
+				</div>
+
+				<input class="btn btn-primary btn-block form-group" type="submit" value="Update database"/>
+			</form>
+		</div>
+	{% endif %}
+
+	{% if not dbConnectionOk or not dbVersionOk %}
+		<p>Refer to the installation manual in the
+			<a href="https://github.com/nick-van-h/qrest">GitHub repository</a>.</p>
+	{% endif %}
+</div></div>

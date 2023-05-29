@@ -1,0 +1,65 @@
+{# For development purposes #}
+{% set collection1 = [{name: 'foo'}, {name: 'bar'}, {name: 'baz'}] %}
+{% set collection2 = ['series', 'carriage', 'latest', 'benefit', 'mold', 'bark', 'violation', 'harmony', 'satellite', 'computer', 'copyright', 'medicine', 'taste', 'delete', 'brick', 'comment', 'owl', 'infinite', 'crevice', 'industry', 'contemporary', 'metal', 'recovery', 'ghostwriter', 'theorist'] %}
+
+<div class="sidebar h-full">
+	<div class="sidebar-menu d-flex flex-column justify-content-between h-full my-0">
+		<div class="sidebar-content d-flex flex-column overflow-hidden m-0">
+			<span>
+				<a class="navbar-brand brand ml-20" href="{{baseUrl}}/home">
+					<h2 class="text-center text-justify">Qrest</h2>
+				</a>
+				<hr class="mt-5 mb-20">
+			</span>
+			<div id="list-outer-container" class="overflow-x-hidden overflow-y-auto">
+				<details class="list-container collapse-panel position-relative" open>
+					<summary
+						class="collapse-header border-0 py-0 m-0 bg-transparent">
+						{# <div class="d-flex justify-content-between align-items-center"> #}
+						<h3 class="m-0">Collections</h3>
+						{# </div> #}
+					</summary>
+					<span class="new-item-button rounded" id="new-tag" onclick="showNewCollectionModal()">
+						<i class="fa-solid fa-plus"></i>
+					</span>
+					<div class="collapse-content p-10 border-0">
+						<ul
+							id="collections" class="m-0 p-0">
+							{# End dummy li #}
+							{% for collection in collections %}
+								{% include('/parts/app/li/collection.twig') %}
+							{% endfor %}
+						</ul>
+					</div>
+				</details>
+				<hr class="my-20">
+				<details class="list-container collapse-panel position-relative" id="tags">
+					<summary class="collapse-header border-0 py-0 m-0 bg-transparent">
+						<div class="d-flex justify-content-between align-items-center">
+							<h3 class="m-0">Tags</h3>
+						</div>
+					</summary>
+					<span class="new-item-button rounded" id="new-tag" onclick="showNewTagModal()">
+						<i class="fa-solid fa-plus"></i>
+					</span>
+					<div class="collapse-content p-10 border-0">
+						<ul>
+							{% for item in collection1 %}
+								{% include('/parts/app/li/tag.twig') %}
+							{% endfor %}
+						</ul>
+					</div>
+
+				</details>
+			</div>
+		</div>
+		<div class="sidebar-content ">
+			<hr class="mb-20">
+			<div class="">
+				<a href="{{baseUrl}}/app/settings">Settings</a>
+				|
+				<a href="{{baseUrl}}/logout">Log out</a>
+			</div>
+		</div>
+	</div>
+</div>

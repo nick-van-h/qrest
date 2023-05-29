@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS `test`;
+CREATE TABLE `test` (
+    `id` BIGINT NOT NULL , 
+    `value` VARCHAR(255) NOT NULL
+) ENGINE = InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_general_ci;

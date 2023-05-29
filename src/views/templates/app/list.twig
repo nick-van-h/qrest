@@ -1,0 +1,10 @@
+<div class="container-fluid h-full" id="content-list">
+	<div class="row h-full overflow-hidden">
+		<div class="col h-full d-flex flex-column border-right p-20 pr-0" id="list-items">
+			{% include 'templates/app/list/items.twig' %}
+		</div>
+		<div class=" col p-20 h-full d-flex flex-column overflow-auto {% if itemId == '' %}hidden{% endif %}" id="list-itemDetails">
+			{% include 'templates/app/list/details.twig' %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+{% extends "document/base.twig" %}
+
+{% block title %}Qrest - Home
+{% endblock %}
+{% block body %}
+	<!-- Sign up modal -->
+	{{ include('parts/modal/signup.twig') }}
+
+
+	<div class="page-wrapper with-navbar">
+		<div class="sticky-alerts"></div>
+		{{ include('parts/menu/nav.twig') }}
+		<div class="content-wrapper">
+			{{ include('templates/content/home.twig') }}
+		</div>
+	</div>
+{% endblock %}

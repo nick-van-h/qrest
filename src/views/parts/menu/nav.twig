@@ -1,0 +1,64 @@
+<nav
+	class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+
+	<!-- Navbar brand -->
+	<div class="col-md-2 hidden-md-and-down"></div>
+	<div class="navbar-brand">
+		<a class="navbar-brand brand" href="{{ baseUrl }}/home">Qrest</a>
+	</div>
+
+	<div class="navbar-content navbar-collapse ml-auto" id="navbarNav">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="{{ baseUrl }}/home">Home</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="w-50 hidden-xs-and-down"></div>
+	<div class="navbar-content mr-20 form-inline dropdown  ">
+		{% if userIsLoggedIn %}
+			<a href="app" class="btn btn-primary">To app</a>
+			<a href="logout" class="btn btn-default">Logout</a>
+		{% else %}
+			<button class="btn btn-primary" data-toggle="dropdown" type="button" id="sign-in-dropdown-toggle-btn" aria-haspopup="true" aria-expanded="false">
+				Sign in
+				<i class="fa fa-angle-down ml-5" aria-hidden="true"></i>
+				<!-- ml-5 = margin-left: 0.5rem (5px) -->
+			</button>
+			<div
+				class="dropdown-menu dropdown-menu-right w-250 w-sm-350" aria-labelledby="sign-in-dropdown-toggle-btn">
+				<!-- w-250 = width: 25rem (250px), w-sm-350 = width: 35rem (350px) only on devices where width > 576px -->
+
+				<div
+					class="dropdown-content p-20">
+					<!-- p-20 = padding: 2rem (20px) -->
+					<form id="login-form">
+						<div class="form-group">
+							<label for="username" class="required">Username</label>
+							<input type="text" id="login-username" name="username" class="form-control" placeholder="Username" required="required" autocomplete="username">
+						</div>
+						<div class="form-group">
+							<label for="password" class="required">Password</label>
+							<input type="password" name="password" class="form-control" placeholder="Password" required="required" autocomplete="current-password">
+						</div>
+						<input class="btn btn-primary btn-block" type="submit" value="Sign in">
+						<div
+							class="text-right mt-10">
+							<!-- text-right = text-align: right, margin-top: 1rem (10px) -->
+							<a href="recover" class="hyperlink">Forgot password?</a>
+							<!-- hyperlink = used on regular links to remove anti-aliasing in dark mode -->
+						</div>
+					</form>
+				</div>
+				{% if ignoreSignupButton != true %}
+					<div class="dropdown-divider"></div>
+					<a onclick="showSignUpModal()" class="dropdown-item text-center">Don't have an account? Sign up</a>
+					<!-- text-center = text-align: center -->
+				{% endif %}
+			</div>
+		{% endif %}
+	</div>
+	<div class="col-md-2 hidden-md-and-down"></div>
+</nav>

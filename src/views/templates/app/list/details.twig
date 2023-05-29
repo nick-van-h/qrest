@@ -1,0 +1,11 @@
+<div>
+	{# Top bar #}
+	<h3 id="itemDetails-itemName" contenteditable="true" spellcheck="false" class="mt-0 {#{% if itemName == '' %}hidden{% endif %}#}" data-itemuid="{{ itemUid }}">
+		{{ itemName }}</h3>
+	<hr>
+</div>
+<div class="summernote-wrapper h-full d-flex flex-column overflow-auto">
+	<div id="summernote" class="raw">
+		{{ note }}
+	</div>
+</div>

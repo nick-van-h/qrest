@@ -1,0 +1,51 @@
+<div class="row m-20">
+    <div class="col-md-2 hidden-md-and-down"></div>
+    <div class="col">
+        <h1 class="text-center mt-5 mb-0 brand">Account recovery</h1>
+        <p>Reset your password using your recovery key</p>
+        <form id="recoverAccountForm">
+            <div class="form-group">
+                <label for="username" class="required">Username</label>
+                <input
+                    id="username"
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    placeholder="Username"
+                    required="required"
+                />
+            </div>
+            <div class="form-group">
+                <label for="password" class="required">Recovery key</label>
+                <input
+                    id="recoverykey"
+                    type="text"
+                    name="recoverykey"
+                    class="form-control"
+                    placeholder="Recovery key"
+                    required="required"
+                />
+            </div>
+            <div class="form-group">
+                <label for="password" class="required">New password</label>
+                <input
+                    id="password"
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="Password"
+                    required="required"
+                />
+            </div>
+            <div class="text-right">
+                <input
+                    class="btn btn-primary btn-block"
+                    type="submit"
+                    value="Reset password"
+                />
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-2 hidden-md-and-down"></div>
+</div>

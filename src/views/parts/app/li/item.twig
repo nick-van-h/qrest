@@ -1,0 +1,29 @@
+{# <li class="d-flex justify-content-between align-items-center rounded mb-0 px-10 py-5" data-type="collection" data-uid="{{ item.uid }}">
+	<div class="w-full d-flex">
+		<form class="item w-full">
+			<div class="input-group w-full my-5">
+				<div class="custom-checkbox pr-5">
+					<input type="checkbox" id="cb-{{ item.uid }}" name="itemChecked" value="" {% if item.checked == 'true' %} checked="checked" {% endif%}>
+					<label for="cb-{{ item.uid }}" class="blank"></label>
+				</div>
+				<input type="text" id="tb-{{ item.uid }}" name="itemName" value="{{ item.name }}" class="flex-fill" placeholder="" spellcheck="false"/>
+			</div>
+		</form>
+
+	</div>
+	<i class="fa-solid fa-ellipsis icon-more"></i>
+</li>
+<hr class="p-0 m-0" id="hr-{{ item.uid }}"> #}
+<li class="has-uid d-flex justify-content-between align-items-center border-bottom mb-0 px-10 py-5" data-type="collection" data-uid="{{ item.uid }}" data-sortorder="{{ item.sortOrder }}">
+	<div class="w-full d-flex">
+		<div class="input-group w-full my-5">
+			<div class="custom-checkbox pr-5">
+				<input type="checkbox" id="cb-{{ item.uid }}" name="itemChecked" value="" {% if item.checked == 'true' %} checked="checked" {% endif%}>
+				<label for="cb-{{ item.uid }}" class="blank"></label>
+			</div>
+			<span id="tb-{{ item.uid }}" class="list-item-text" placeholder="" spellcheck="false">{{ item.name }}</span>
+		</div>
+
+	</div>
+	<i class="fa-solid fa-ellipsis icon-more"></i>
+</li>

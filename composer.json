@@ -1,0 +1,25 @@
+{
+    "name": "qrest/qrest",
+    "description": "Qrest - A privacy-by-design productivity platform",
+    "type": "project",
+    "license": "GNU General Public License v3.0",
+    "autoload": {
+        "psr-4": {
+            "Qrest\\": "src/modules"
+        },
+        "classmap": ["src/modules/"],
+        "files": [
+            "config/bootstrap.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "vendor-dir": "vendor/qrest"
+    },
+    "require": {
+        "symfony/http-foundation": "6.3.x-dev",
+        "symfony/routing": "6.3.x-dev",
+        "thingengineer/mysqli-database-class": "dev-master",
+        "twig/twig": "^3.0"
+    }
+}

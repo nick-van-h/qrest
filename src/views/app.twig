@@ -1,0 +1,38 @@
+{% extends "document/base.twig" %}
+
+{% block title %}
+	{% if title != '' %}
+		{{ title }}
+		- Qrest
+	{% else %}
+		Qrest app
+	{% endif %}
+{% endblock %}
+{% block body %}
+	{% if recoverykey != '' %}
+		{% include ('parts/modal/recoverykey.twig') %}
+	{% endif %}
+	<div class="page-wrapper with-sidebar">
+
+		{% include('parts/menu/popup.twig') %}
+		{% include('parts/modal/newCollection.twig') %}
+		{% include('parts/modal/removeCollection.twig') %}
+		{% include('parts/modal/newTag.twig') %}
+		{% include('parts/menu/sidebar.twig') %}
+
+		<div class="sticky-alerts"></div>
+
+		<div id="content" class="content-wrapper h-full">
+			{% if page == 'settings' %}
+				{% include('templates/app/settings.twig') %}
+
+			{% elseif page == 'list' %}
+				{% include ('templates/app/list.twig') %}
+			{% else %}
+
+				{% include ('templates/app/list.twig') %}
+			{% endif %}
+
+		</div>
+	</div>
+{% endblock %}

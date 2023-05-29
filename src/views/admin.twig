@@ -1,0 +1,15 @@
+{% set ignoreSignupButton = true %}
+
+{% extends "document/base.twig" %}
+
+{% block title %}Qrest - Admin
+{% endblock %}
+{% block body %}
+	<div class="page-wrapper with-navbar">
+		<div class="sticky-alerts"></div>
+		{{ include('parts/menu/nav.twig') }}
+		<div class="content-wrapper overflow-x-hidden">
+			{% include('templates/content/admin.twig') %}
+		</div>
+	</div>
+{% endblock %}

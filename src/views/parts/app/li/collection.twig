@@ -1,0 +1,13 @@
+<li class="has-uid d-flex justify-content-between align-items-center rounded m-0 p-0 {% if listId == collection.uid %}selected{% endif %}" data-type="collection" data-uid="{{ collection.uid }}" data-sortorder="{{ collection.sortOrder }}">
+	<ul class="connectedSortable collection-wrapper w-full  px-10 py-5">
+		<li class="ui-state-disabled d-flex justify-content-between align-items-center rounded">
+			<div>
+				<span class="icon">
+					<i class="fa-solid fa-list-check"></i>
+				</span>
+				<span class="name">{{ collection.name }}</span>
+			</div>
+			<i class="fa-solid fa-ellipsis icon-more"></i>
+		</li>
+	</ul>
+</li>

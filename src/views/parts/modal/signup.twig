@@ -1,0 +1,72 @@
+<div class="modal" id="modal-1" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" role="button" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </a>
+            <h5 class="modal-title">Create account</h5>
+            <form id="createAccountForm">
+                <div class="form-group">
+                    <label for="username" class="required">Username</label>
+                    <input
+                        id="newusername"
+                        type="text"
+                        name="username"
+                        class="form-control"
+                        placeholder="Username"
+                        required="required"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="password" class="required">Password</label>
+                    <input
+                        id="newpassword"
+                        type="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Password"
+                        required="required"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input
+                            type="checkbox"
+                            id="understand-consequences"
+                            required="required"
+                        />
+                        <label for="understand-consequences" class="required"
+                            >I understand that my data becomes permanently
+                            inaccessible if I lose my password</label
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="custom-checkbox">
+                        <input
+                            type="checkbox"
+                            id="agree-to-terms"
+                            required="required"
+                        />
+                        <label for="agree-to-terms" class="required"
+                            >I agree to all the
+                            <a href="#" class="hyperlink"
+                                >terms and conditions</a
+                            ></label
+                        >
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <input
+                        class="btn btn-primary btn-block"
+                        type="submit"
+                        value="Create account"
+                    />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

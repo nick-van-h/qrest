@@ -1,0 +1,28 @@
+{% set ignoreSignupButton = true %}
+
+{% extends "document/base.twig" %}
+
+{% block body %}
+	<div class="page-wrapper with-navbar">
+		<div class="sticky-alerts"></div>
+		{{ include('parts/menu/nav.twig') }}
+		<div class="content-wrapper">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="text-center http-header">
+						{% block errorbody %}{% endblock %}
+					</div>
+					{% if errormessage != "" %}
+						<hr class="w-100 ml-auto my-5"/>
+						<p class="mt-20 pt-10">
+							<em>Details:</em>
+						</p>
+						<pre class="debug">
+                {{ errormessage }}
+                </pre>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

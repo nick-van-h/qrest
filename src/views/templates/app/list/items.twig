@@ -1,0 +1,51 @@
+{# List container #}
+<div
+	class="pr-20">
+	{# Top bar #}
+	<h3 id="listName" class="mt-0" {% if listName != 'All items' %} contenteditable="true" {% endif %} spellcheck="false">{{ listName }}</h3>
+	<form id="newItemForm">
+		<div class="form-group mb-15">
+			<input
+			id="itemName" type="text" name="itemName" class="form-control" required="required" {% if listName == 'All items' or listName == '' %} placeholder="Default collection not set, please select a collection" disabled {% else %} placeholder="+ Add new item" {% endif %}/>
+		{# For future reference: Update disable behavior when selecting tags #}
+		</div>
+	</form>
+</div>
+<div class="h-full overflow-auto pr-20">
+	<div
+		class="overflow-inner">
+		{# The actual list #}
+		<ul id="list" class="connectedSortable items-list">
+			{% for item in items %}
+				{% if item.checked != 'true' %}
+					{% include('parts/app/li/item.twig') %}
+				{% endif %}
+			{% endfor %}
+		</ul>
+		{# Container for checked items #}
+		{# <details class="list-container collapse-panel position-relative items-list-completed-container"> #}
+		<details
+			class="items-list-completed-container">
+			{# <summary class="collapse-header border-0 py-0  m-0 mt-20 bg-transparent" tabindex="-1"> #}
+			<summary
+				class="border-0 py-0  m-0 mt-20 bg-transparent" tabindex="-1">
+				{# <div class="d-flex justify-content-between align-items-center"> #}
+				<span class="mt-20 font-size-12">Completed</span>
+				{# </div> #}
+			</summary>
+			{# <div class="collapse-content p-0 border-0"> #}
+			<div
+				class="p-0 border-0">
+				{# The actual checked list #}
+				<ul id="list-completed" class="connectedSortable items-list items-list-completed">
+					{% for item in items %}
+						{% if item.checked == 'true' %}
+							{% include('parts/app/li/item.twig') %}
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
+		</details>
+
+	</div>
+</div>

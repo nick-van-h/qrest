@@ -1,0 +1,486 @@
+html {
+    font-size: 66% !important;
+}
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #1b1d21;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Lemonmilk */
+@font-face {
+    font-family: "Lemonmilk";
+    src: url("../fonts/lemon_milk/LEMONMILK-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lemonmilk";
+    src: url("../fonts/lemon_milk/LEMONMILK-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Lemonmilk";
+    src: url("../fonts/lemon_milk/LEMONMILK-RegularItalic.otf")
+        format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 1.4rem;
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.05);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: transparent;
+    border: 0.4rem solid transparent;
+    background-clip: content-box;
+    border-radius: 1rem;
+}
+::-webkit-scrollbar-track {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.brand {
+    font-family: "Lemonmilk";
+}
+.brand h1 {
+    font-size: 8rem;
+}
+.brand h2 {
+    font-size: 5.5rem;
+}
+
+h1.http-error {
+    font-family: "Lemonmilk";
+    font-size: 10rem;
+}
+
+div.http-error {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+}
+
+pre.debug {
+    font-size: small;
+    font-family: "Courier New", Courier, monospace;
+    padding: 10px 20px;
+    background-color: #272727;
+    border-left: 5px solid #424242;
+    width: fit-content;
+    line-height: 1.8rem;
+    white-space: pre-wrap;
+    color: rgba(255, 255, 255, 0.8);
+    border: none;
+}
+
+.h-80 {
+    height: 80% !important;
+}
+.list-container .collapse-content > ul {
+    margin-bottom: 0;
+}
+
+.list-container .collapse-content > ul > li {
+    cursor: pointer;
+}
+
+.list-container .collapse-content > ul > li.selected {
+    background-color: #32363a;
+}
+.list-container .collapse-content > ul > li.selected:hover {
+    background-color: #32363a !important;
+}
+
+.list-container .collapse-content > ul > li:hover {
+    background-color: #25282c;
+}
+.list-container .collapse-content > ul > li .icon {
+    display: inline-block;
+    width: 25px;
+}
+
+/* Three dots menu icon */
+/* .list-container .collapse-content > ul > li i.icon-more {
+    display: none;
+}
+.list-container .collapse-content > ul > li:hover i.icon-more {
+    display: block;
+} */
+li i.icon-more {
+    display: none;
+}
+li:hover i.icon-more {
+    display: block;
+    cursor: pointer;
+}
+li:hover i.icon-more:hover {
+    color: #fff;
+}
+
+.list-container .new-item {
+    display: none;
+    cursor: pointer;
+}
+.list-container:hover .new-item {
+    display: block !important;
+}
+.list-container:hover .new-item:hover {
+    background-color: #25282c;
+}
+
+form.item {
+    display: inline-block;
+}
+
+form.item input {
+    background-color: transparent;
+    border: 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+form.item input:focus {
+    outline: none;
+}
+
+/**
+ * Popup
+ */
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    z-index: 1000;
+    background-color: rgb(25, 28, 32);
+}
+
+.popup.show {
+    display: block;
+}
+
+/*
+ * Titles
+ */
+#listName,
+#itemDetails-itemName {
+    outline: none;
+    border-bottom: 1px solid transparent;
+}
+#listName:focus,
+#itemDetails-itemName:focus {
+    /* text-decoration: underline; */
+    border-bottom: 1px solid rgb(85, 85, 85);
+}
+
+.new-item-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    /* display: none; */
+    opacity: 0;
+    /* padding: 0.5rem; */
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    cursor: pointer;
+}
+
+.list-container summary:hover ~ .new-item-button {
+    /* display: block; */
+    opacity: 1;
+}
+.new-item-button:hover {
+    /* display: block; */
+    opacity: 1;
+    background-color: #424242;
+}
+
+.overflow-when-hover {
+    overflow: hidden;
+    position: relative;
+}
+.overflow-when-hover:hover {
+    overflow: auto;
+}
+.overflow-inner {
+    box-sizing: border-box;
+}
+
+.ui-sortable-helper {
+    background-color: #25282c;
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+ul.items-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.items-list li {
+    padding: 10px;
+    cursor: move;
+    margin-bottom: 5px;
+    position: relative;
+    height: 40px;
+}
+
+.items-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.items-list li.placeholder {
+    background-color: #414141;
+    border: none;
+    height: 35px;
+}
+
+.items-list .editable {
+    background-color: #414141;
+    cursor: pointer;
+}
+.items-list .editable .list-item-text {
+    color: inherit;
+    /* border: none; */
+    outline: none;
+}
+
+.items-list .list-item-text {
+    margin-left: 10px;
+    cursor: text;
+}
+
+/* Completed items */
+.items-list-completed {
+    opacity: 0.5;
+}
+.items-list-completed .custom-checkbox label:before {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Completed items container */
+.items-list-completed-container summary {
+    margin-left: 1.5rem !important;
+
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+details.items-list-completed-container summary::after {
+    content: "\25B9"; /* Unicode character for a downward-pointing triangle */
+    float: left;
+    margin-right: 1rem;
+    transform: rotate(0deg) translateY(-1px);
+    transition: transform 0.1s ease;
+}
+
+details[open].items-list-completed-container summary::after {
+    transform: rotate(90deg) translateY(-1px);
+}
+details,
+details summary {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+summary,
+summary:focus,
+summary:active,
+details,
+details:focus,
+details:active {
+    outline: none;
+    border: none;
+    /* Additional styles for selected form elements */
+}
+
+ul.collection-wrapper {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+ul.collection-wrapper li {
+    /* display: inline-block; */
+    padding: 0;
+    margin: 0;
+}
+
+ul.collection-wrapper {
+    position: relative !important;
+}
+ul.collection-wrapper li.placeholder {
+    /* display: none !important;
+    visibility: hidden !important; */
+    position: absolute !important;
+    /* float: left !important; */
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    list-style: none !important;
+    border: 1px solid grey !important;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.sudo-hide {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+/**
+ * Reset bootstrap incompatibilities vs moonshine
+ */
+.dropdown-menu.dropdown-menu-right {
+    top: unset;
+}
+.form-group {
+    margin-bottom: 2rem !important;
+}
+.navbar-brand {
+    float: unset;
+    height: unset;
+    padding: unset;
+    line-height: unset;
+}
+/**
+ * Summernote dark theme
+ */
+
+body.dark-mode .note-editor.note-frame.panel.panel-default {
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+body.dark-mode .note-toolbar .note-btn,
+body.dark-mode .note-toolbar .note-btn:focus,
+body.dark-mode .note-toolbar .note-btn:active {
+    background-color: #2e353e !important;
+    color: #9097a0 !important;
+    border-color: #2e353e !important;
+}
+
+body.dark-mode .show > .btn-light.dropdown-toggle {
+    background-color: #242830;
+}
+
+body.dark-mode .note-toolbar .dropdown-menu .dropdown-item {
+    color: #9097a0;
+}
+
+body.dark-mode .note-toolbar .btn {
+    color: #9097a0;
+}
+
+body.dark-mode .panel-heading.note-toolbar {
+    background-color: transparent;
+}
+
+body.dark-mode .note-editor.note-frame .note-editing-area .note-editable,
+body.dark-mode .note-editor.note-frame .note-status-output {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.note-btn-group.btn-group.open .dropdown-menu {
+    visibility: unset;
+}
+
+body.dark-mode .dropdown-menu a:hover {
+    background-color: #32363a;
+    border-radius: 5px;
+}
+body.dark-mode .dropdown-menu a {
+    color: #9097a0 !important;
+}
+body.dark-mode .panel-default > .panel-heading {
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * Custom Summernote adaptions to make the text area flex fit the column
+ */
+.note-editor.note-frame.panel.panel-default {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: auto;
+    /* height: 100%;
+    max-height: 100%; */
+}
+
+.note-editor.note-frame.panel.panel-default .note-editing-area {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: auto;
+    /* height: 100%;
+    max-height: 100%; */
+    /* flex: 1 1 auto !important; */
+}
+
+body.dark-mode .note-editor.note-frame .note-editing-area .note-editable {
+    /* height: 100%;
+    overflow: hidden;
+    max-height: 100%; */
+
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden auto;
+}
+
+/**
+ * Note elements
+ */
+
+body.dark-mode .note-editor.note-frame .note-editing-area .note-editable div {
+    /* display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem; */
+    overflow-wrap: anywhere;
+    white-space: break-spaces;
+}
+
+body.dark-mode .note-editor.note-frame .note-editing-area .note-editable hr {
+    color: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 2px;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .note-editor.note-frame .note-editing-area .note-editable p {
+    /* margin-bottom: 0; */
+}

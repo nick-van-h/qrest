@@ -1,0 +1,15 @@
+{
+    "latest": "v0.1.0",
+    "releases": [
+        {
+            "version": "v0.1.0",
+            "date": "2023-MM-DD",
+            "notes": ["Foo", "Bar", "Baz"]
+        },
+        {
+            "version": "v0.0.0",
+            "date": "2023-MM-DD",
+            "notes": ["Initial config table"]
+        }
+    ]
+}

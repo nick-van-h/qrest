@@ -1,0 +1,15 @@
+{% extends "document/base.twig" %}
+
+{% block title %}Qrest - Account recovery
+{% endblock %}
+{% block body %}
+
+
+	<div class="page-wrapper with-navbar">
+		<div class="sticky-alerts"></div>
+		{{ include('parts/menu/nav.twig') }}
+		<div class="content-wrapper">
+			{{ include('templates/content/recovery.twig') }}
+		</div>
+	</div>
+{% endblock %}
